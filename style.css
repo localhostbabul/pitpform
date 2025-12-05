@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'babulkhan';
+    src: url(./assets/fonts/babul.ttf);
+}
+
+
+:root {
+    --primary-color: #3b82f6;
+}
+
+body {
+    font-family: 'babulkhan';
+    background-color: #f3f4f6;
+}
+
+
+.input-group {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.input-field {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.25;
+    min-height: 3.5rem;
+}
+
+.floating-label {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    transform-origin: 0 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 2rem);
+    transform: translateY(1.25rem);
+}
+
+.input-field:focus+.floating-label,
+.input-field:not(:placeholder-shown)+.floating-label {
+    transform: translateY(0.5rem) scale(0.75);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
